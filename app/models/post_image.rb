@@ -2,7 +2,7 @@ class PostImage < ApplicationRecord
     
     has_one_attached :image
     belongs_to :user
-    
+    has_many :post_comments, dependent: :destroy
     
     #画像が存在しない場合の処理、画像のサイズ変更処理
     def get_image
