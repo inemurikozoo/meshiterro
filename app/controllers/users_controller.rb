@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     #特定のユーザ@userに関連付けられたすべて.post_imagesを取得、@post_imagesに渡す
-    @post_images = @user.post_images
+    @post_images = @user.post_images.page(params[:page])
     
   end
 

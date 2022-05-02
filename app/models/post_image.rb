@@ -5,6 +5,9 @@ class PostImage < ApplicationRecord
     has_many :post_comments, dependent: :destroy
     has_many :favorites, dependent: :destroy
     
+    validates :shop_name, presence: true
+    validates :image, presence: true
+    
     #画像が存在しない場合の処理、画像のサイズ変更処理
     def get_image
     unless image.attached?
